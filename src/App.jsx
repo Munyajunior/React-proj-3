@@ -4,16 +4,7 @@ import travelData from "../src/assets/data.js";
 import "./index.css";
 export default function App() {
   const travelJournal = travelData.map((item) => {
-    return (
-      <Main
-        img={{ src: item.img.src, alt: item.img.alt }}
-        title={item.title}
-        country={item.country}
-        googleMapsLink={item.googleMapsLink}
-        dates={item.dates}
-        text={item.text}
-      />
-    );
+    return <Main key={item.id} {...item} />;
   });
 
   return (
